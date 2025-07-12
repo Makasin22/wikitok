@@ -48,3 +48,72 @@ body {
   justify-content: center;
   color: #fff;
 }
+
+.likes-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.likes-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.likes-panel {
+  background: #111;
+  color: #fff;
+  padding: 1rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.likes-panel h2 {
+  margin-top: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.liked-item {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.liked-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.liked-item .info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
