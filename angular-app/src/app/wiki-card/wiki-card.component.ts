@@ -10,9 +10,10 @@ export interface WikiArticle {
 }
 
 @Component({
-  selector: 'app-wiki-card',
-  templateUrl: './wiki-card.component.html',
-  styleUrls: ['./wiki-card.component.css']
+    selector: 'app-wiki-card',
+    templateUrl: './wiki-card.component.html',
+    styleUrls: ['./wiki-card.component.css'],
+    standalone: false
 })
 export class WikiCardComponent {
   @Input() article!: WikiArticle;
