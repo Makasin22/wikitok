@@ -131,6 +131,7 @@ body {
 
 .liked-item {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -141,11 +142,31 @@ body {
   object-fit: cover;
 }
 
+@media (max-width: 600px) {
+  .liked-item img {
+    width: 48px;
+    height: 48px;
+  }
+  .liked-item button {
+    font-size: 0.875rem;
+  }
+}
+
+
 .liked-item .info {
   flex: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.liked-item button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: center;
 }
 
 .liked-item .info a {
