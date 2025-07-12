@@ -1,0 +1,9 @@
+<div class="container">
+  <div *ngFor="let article of articles">
+    <app-wiki-card
+      [article]="article"
+      [liked]="liked.isLiked(article.pageid)"
+      (like)="toggleLike(article)"></app-wiki-card>
+  </div>
+  <button (click)="load()" [disabled]="loading">Load more</button>
+</div>

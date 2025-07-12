@@ -1,0 +1,7 @@
+<div class="wiki-card" (dblclick)="toggleLike()">
+  <img *ngIf="article.thumbnail" [src]="article.thumbnail.source" [alt]="article.displaytitle" />
+  <h2>{{article.displaytitle}}</h2>
+  <p>{{article.extract}}</p>
+  <button (click)="toggleLike()">{{ liked ? 'Unlike' : 'Like' }}</button>
+  <button (click)="shareArticle()">Share</button>
+</div>
