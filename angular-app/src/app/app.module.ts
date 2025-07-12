@@ -6,8 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { WikiCardComponent } from './wiki-card/wiki-card.component';
 
-@NgModule({
-    declarations: [AppComponent, WikiCardComponent],
-    bootstrap: [AppComponent], imports: [BrowserModule, FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())]
-})
-export class AppModule { }
+@NgModule({ declarations: [AppComponent, WikiCardComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule, FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+export class AppModule {}
