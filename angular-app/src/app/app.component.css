@@ -1,3 +1,23 @@
-.container {
-  padding: 1rem;
+.feed {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+.sentinel {
+  height: 10px;
+  margin-top: -1px;
+}
+
+.loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 }

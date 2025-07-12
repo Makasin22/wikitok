@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { WikiService } from './wiki.service';
 import { LikedArticlesService } from './liked-articles.service';
 import type { WikiArticle } from './wiki-card/wiki-card.component';
@@ -9,9 +9,11 @@ import type { WikiArticle } from './wiki-card/wiki-card.component';
     styleUrls: ['./app.component.css'],
     standalone: false
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   articles: WikiArticle[] = [];
   loading = false;
+  private observer?: IntersectionObserver;
+  @ViewChild('observer', { static: false }) observerElem!: ElementRef<HTMLDivElement>;
 
   constructor(
     private wiki: WikiService,
@@ -20,6 +22,23 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.load();
+  }
+
+  ngAfterViewInit() {
+    this.observer = new IntersectionObserver(entries => {
+      const entry = entries[0];
+      if (entry.isIntersecting && !this.loading) {
+        this.load();
+      }
+    }, { rootMargin: '100px' });
+
+    if (this.observerElem) {
+      this.observer.observe(this.observerElem.nativeElement);
+    }
+  }
+
+  ngOnDestroy() {
+    this.observer?.disconnect();
   }
 
   load() {
