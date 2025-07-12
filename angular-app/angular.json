@@ -17,6 +17,7 @@
             "index": "src/index.html",
             "tsConfig": "tsconfig.json",
             "inlineStyleLanguage": "css",
+            "styles": ["src/styles.css"],
             "browser": "src/main.ts"
           }
         },
