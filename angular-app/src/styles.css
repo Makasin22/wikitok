@@ -40,3 +40,32 @@ body {
     height: 2.5rem;
   }
 }
+
+@media (max-width: 600px) {
+  .likes-btn {
+    padding: 0.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .likes-overlay {
+    padding: 0.5rem;
+  }
+
+  .likes-panel {
+    width: 95%;
+    max-height: 90vh;
+    padding: 0.75rem;
+  }
+
+  .liked-item img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .liked-item button,
+  .close-btn {
+    font-size: 0.875rem;
+  }
+}
