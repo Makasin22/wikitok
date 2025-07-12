@@ -19,6 +19,7 @@ export class WikiCardComponent {
   @Input() article!: WikiArticle;
   @Input() liked = false;
   @Output() like = new EventEmitter<WikiArticle>();
+  // Share event emitter is kept for potential parent handling
   @Output() share = new EventEmitter<WikiArticle>();
 
   toggleLike() {
@@ -26,6 +27,14 @@ export class WikiCardComponent {
   }
 
   shareArticle() {
+    const { displaytitle, url, extract } = this.article;
+    const nav: any = navigator;
+    if (nav.share) {
+      nav.share({ title: displaytitle, text: extract, url }).catch(() => {});
+    } else if (nav.clipboard) {
+      nav.clipboard.writeText(url);
+      alert('Link copied to clipboard!');
+    }
     this.share.emit(this.article);
   }
 }

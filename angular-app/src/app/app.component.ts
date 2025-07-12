@@ -12,6 +12,7 @@ import type { WikiArticle } from './wiki-card/wiki-card.component';
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   articles: WikiArticle[] = [];
   loading = false;
+  showLikes = false;
   private observer?: IntersectionObserver;
   @ViewChild('observer', { static: false }) observerElem!: ElementRef<HTMLDivElement>;
 
@@ -51,5 +52,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   toggleLike(article: WikiArticle) {
     this.liked.toggle(article);
+  }
+
+  toggleLikesMenu() {
+    this.showLikes = !this.showLikes;
   }
 }

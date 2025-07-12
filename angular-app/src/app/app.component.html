@@ -9,3 +9,22 @@
   <div #observer class="sentinel"></div>
   <div *ngIf="loading" class="loading">Loading...</div>
 </div>
+
+<button class="likes-btn" (click)="toggleLikesMenu()">
+  Likes ({{ liked.articles.length }})
+</button>
+
+<div class="likes-overlay" *ngIf="showLikes" (click)="toggleLikesMenu()">
+  <div class="likes-panel" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="toggleLikesMenu()">✕</button>
+    <h2>Liked Articles</h2>
+    <div *ngIf="liked.articles.length === 0">No liked articles yet.</div>
+    <div *ngFor="let art of liked.articles" class="liked-item">
+      <img *ngIf="art.thumbnail" [src]="art.thumbnail.source" [alt]="art.title" />
+      <div class="info">
+        <a [href]="art.url" target="_blank" rel="noopener noreferrer">{{ art.displaytitle }}</a>
+        <button (click)="toggleLike(art)" aria-label="Remove">✕</button>
+      </div>
+    </div>
+  </div>
+</div>

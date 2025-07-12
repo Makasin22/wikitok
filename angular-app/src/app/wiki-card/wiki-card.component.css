@@ -52,3 +52,35 @@ p {
 .actions {
   margin-top: 1rem;
 }
+
+.top-actions {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.top-actions button {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.top-actions button.liked {
+  background: #e0245e;
+}
+
+.read-more {
+  color: #fff;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
