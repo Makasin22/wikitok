@@ -66,6 +66,15 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .likes-btn {
+    padding: 0.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
 .likes-overlay {
   position: fixed;
   inset: 0;
@@ -75,6 +84,12 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 20;
+}
+
+@media (max-width: 600px) {
+  .likes-overlay {
+    padding: 0.5rem;
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
@@ -89,6 +104,14 @@ body {
   width: 90%;
   max-width: 600px;
   position: relative;
+}
+
+@media (max-width: 600px) {
+  .likes-panel {
+    width: 95%;
+    max-height: 90vh;
+    padding: 0.75rem;
+  }
 }
 
 .likes-panel h2 {
@@ -108,6 +131,7 @@ body {
 
 .liked-item {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -118,13 +142,42 @@ body {
   object-fit: cover;
 }
 
+@media (max-width: 600px) {
+  .liked-item img {
+    width: 48px;
+    height: 48px;
+  }
+  .liked-item button {
+    font-size: 0.875rem;
+  }
+}
+
+
 .liked-item .info {
   flex: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.liked-item button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: center;
 }
 
 .liked-item .info a {
   color: #fff;
+}
+
+.liked-item .extract {
+  color: #ccc;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

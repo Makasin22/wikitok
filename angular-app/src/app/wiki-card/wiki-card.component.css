@@ -46,7 +46,13 @@ p {
 }
 
 .wiki-card {
-  font-size: 2vh !important;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .wiki-card {
+    font-size: 3.5vw;
+  }
 }
 
 .actions {
@@ -72,6 +78,13 @@ p {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .top-actions button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 
 .top-actions button.liked {
