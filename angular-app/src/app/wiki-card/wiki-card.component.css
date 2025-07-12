@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
 .wiki-card {
+  font-family: 'Roboto', sans-serif;
   position: relative;
   height: 100vh;
   scroll-snap-align: start;
@@ -27,7 +30,23 @@
   bottom: 10vh;
   left: 0;
   right: 0;
-  padding: 1rem;
+  padding: 1rem 3rem;
+  backdrop-filter: blur(4px);
+  background-color: color-mix(in oklab, black 30%, transparent);
+}
+
+p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  max-height: 6em;
+  /* 5 строк по 1.2em */
+  text-overflow: ellipsis;
+}
+
+.wiki-card {
+  font-size: 2vh !important;
 }
 
 .actions {
