@@ -28,9 +28,11 @@ body {
   margin: 0;
 }
 
+
+
 @media (max-width: 600px) {
   .wiki-card {
-    font-size: 3.5vw;
+    font-size: 3.5rem;
   }
 }
 
@@ -54,7 +56,7 @@ body {
   }
 
   .likes-panel {
-    width: 95%;
+    width: 95vw;
     max-height: 90vh;
     padding: 0.75rem;
   }

@@ -45,14 +45,17 @@ p {
   text-overflow: ellipsis;
 }
 
-.wiki-card {
-  font-size: 16px;
-}
 
 @media (max-width: 600px) {
   .wiki-card {
-    font-size: 3.5vw;
+    font-size: 4.5vw;
   }
+
+  .wiki-card .content {
+      padding: 1rem 2rem;
+
+  }
+
 }
 
 .actions {
@@ -95,5 +98,4 @@ p {
   color: #fff;
   text-decoration: underline;
   display: inline-block;
-  margin-top: 0.5rem;
 }
