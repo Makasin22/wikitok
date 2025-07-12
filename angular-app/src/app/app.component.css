@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
 html,
 body {
   overflow: hidden;
@@ -76,8 +78,6 @@ body {
   justify-content: center;
   z-index: 20;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 .likes-panel {
   font-family: 'Roboto', sans-serif;
