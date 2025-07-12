@@ -68,6 +68,15 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .likes-btn {
+    padding: 0.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
 .likes-overlay {
   position: fixed;
   inset: 0;
@@ -77,6 +86,12 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 20;
+}
+
+@media (max-width: 600px) {
+  .likes-overlay {
+    padding: 0.5rem;
+  }
 }
 
 .likes-panel {
@@ -89,6 +104,14 @@ body {
   width: 90%;
   max-width: 600px;
   position: relative;
+}
+
+@media (max-width: 600px) {
+  .likes-panel {
+    width: 95%;
+    max-height: 90vh;
+    padding: 0.75rem;
+  }
 }
 
 .likes-panel h2 {
@@ -127,4 +150,13 @@ body {
 
 .liked-item .info a {
   color: #fff;
+}
+
+.liked-item .extract {
+  color: #ccc;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

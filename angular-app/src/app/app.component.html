@@ -20,11 +20,12 @@
     <h2>Liked Articles</h2>
     <div *ngIf="liked.articles.length === 0">No liked articles yet.</div>
     <div *ngFor="let art of liked.articles" class="liked-item">
-      <img *ngIf="art.thumbnail" [src]="art.thumbnail.source" [alt]="art.title" />
-      <div class="info">
-        <a [href]="art.url" target="_blank" rel="noopener noreferrer">{{ art.displaytitle }}</a>
-        <button (click)="toggleLike(art)" aria-label="Remove">✕</button>
+        <img *ngIf="art.thumbnail" [src]="art.thumbnail.source" [alt]="art.title" />
+        <div class="info">
+          <a [href]="art.url" target="_blank" rel="noopener noreferrer">{{ art.displaytitle }}</a>
+          <button (click)="toggleLike(art)" aria-label="Remove">✕</button>
+        </div>
+        <p class="extract">{{ art.extract }}</p>
       </div>
-    </div>
   </div>
 </div>
