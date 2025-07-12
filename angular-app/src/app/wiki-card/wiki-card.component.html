@@ -1,7 +1,16 @@
 <div class="wiki-card" (dblclick)="toggleLike()">
-  <img *ngIf="article.thumbnail" [src]="article.thumbnail.source" [alt]="article.displaytitle" />
-  <h2>{{article.displaytitle}}</h2>
-  <p>{{article.extract}}</p>
-  <button (click)="toggleLike()">{{ liked ? 'Unlike' : 'Like' }}</button>
-  <button (click)="shareArticle()">Share</button>
+  <img
+    *ngIf="article.thumbnail"
+    [src]="article.thumbnail.source"
+    [alt]="article.displaytitle"
+  />
+  <div class="gradient"></div>
+  <div class="content">
+    <h2>{{ article.displaytitle }}</h2>
+    <p>{{ article.extract }}</p>
+    <div class="actions">
+      <button (click)="toggleLike()">{{ liked ? 'Unlike' : 'Like' }}</button>
+      <button (click)="shareArticle()">Share</button>
+    </div>
+  </div>
 </div>
